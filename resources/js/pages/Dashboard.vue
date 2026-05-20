@@ -1,47 +1,32 @@
-<script setup lang="ts">
-import { Head } from '@inertiajs/vue3';
-import PlaceholderPattern from '@/components/PlaceholderPattern.vue';
-import { dashboard } from '@/routes';
-
-defineOptions({
-    layout: {
-        breadcrumbs: [
-            {
-                title: 'Dashboard',
-                href: dashboard(),
-            },
-        ],
-    },
-});
-</script>
-
 <template>
-    <Head title="Dashboard" />
-
-    <div
-        class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
-    >
-        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div
-                class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
-            >
-                <PlaceholderPattern />
-            </div>
-            <div
-                class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
-            >
-                <PlaceholderPattern />
-            </div>
-            <div
-                class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
-            >
-                <PlaceholderPattern />
-            </div>
-        </div>
-        <div
-            class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
-        >
-            <PlaceholderPattern />
-        </div>
+  <div class="min-h-[70vh] flex items-center justify-center bg-slate-900">
+    <div class="text-center space-y-4">
+      <div class="inline-block animate-spin w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full"></div>
+      <p class="text-slate-400 text-sm">Carregando painel personalizado...</p>
     </div>
+  </div>
 </template>
+
+<script setup>
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
+
+const authStore = useAuthStore()
+const router = useRouter()
+
+onMounted(() => {
+  const role = authStore.user?.role
+  if (role === 'admin') {
+    router.replace('/admin/dashboard')
+  } else if (role === 'aqv') {
+    router.replace('/aqv/dashboard')
+  } else if (role === 'professor') {
+    router.replace('/professor/dashboard')
+  } else if (role === 'porteiro') {
+    router.replace('/porteiro/dashboard')
+  } else {
+    router.replace('/login')
+  }
+})
+</script>

@@ -6,41 +6,6 @@
       0 => 'Inertia\\ServiceProvider',
     ),
   ),
-  'laravel/breeze' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
-    ),
-  ),
-  'laravel/fortify' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Fortify\\FortifyServiceProvider',
-    ),
-  ),
-  'laravel/pail' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Pail\\PailServiceProvider',
-    ),
-  ),
-  'laravel/pao' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Pao\\Laravel\\ServiceProvider',
-    ),
-  ),
-  'laravel/passkeys' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Passkeys\\PasskeysServiceProvider',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -60,13 +25,6 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    ),
-  ),
-  'laravel/wayfinder' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Wayfinder\\WayfinderServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -90,11 +48,22 @@
       0 => 'Termwind\\Laravel\\TermwindServiceProvider',
     ),
   ),
+  'spatie/laravel-ignition' => 
+  array (
+    'aliases' => 
+    array (
+      'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
+    ),
+    'providers' => 
+    array (
+      0 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
+    ),
+  ),
   'tightenco/ziggy' => 
   array (
     'providers' => 
     array (
-      0 => 'Tighten\\Ziggy\\ZiggyServiceProvider',
+      0 => 'Tightenco\\Ziggy\\ZiggyServiceProvider',
     ),
   ),
 );
