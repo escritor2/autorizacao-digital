@@ -230,10 +230,6 @@ php artisan serve --port=8001
 - Verifique se Mailpit está rodando: `http://localhost:8025`
 - Confirme `MAIL_HOST=localhost` e `MAIL_PORT=1025` no `.env`
 
-## Documentação Completa
-
-Veja `MANUAL_TECNICO.md` para documentação técnica e operacional detalhada.
-
 ## Suporte
 
 Para dúvidas ou problemas:
@@ -244,7 +240,4 @@ Para dúvidas ou problemas:
 
 MIT License - Veja LICENSE para detalhes.
 
----
 
-**Versão:** 1.0.0  
-**Última atualização:** 19 de maio de 2026
